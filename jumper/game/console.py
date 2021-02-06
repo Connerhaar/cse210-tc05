@@ -1,8 +1,10 @@
+
 import random
 
 class Console:
 
     def read(self, prompt):
+
         """Gets text input from the user through the screen.
 
         Args: 
@@ -33,4 +35,10 @@ class Console:
             self (Screen): An instance of Screen.
             text (string): The text to display.
         """
+        print(text)
+
+        return input(prompt)
+
+    def write(self, text):
+
         print(text)
