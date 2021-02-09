@@ -37,5 +37,3 @@ class Console:
         """
         print(text)
 
-        return input(prompt)
-
