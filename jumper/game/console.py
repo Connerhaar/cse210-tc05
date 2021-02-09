@@ -39,6 +39,3 @@ class Console:
 
         return input(prompt)
 
-    def write(self, text):
-
-        print(text)

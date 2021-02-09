@@ -8,13 +8,12 @@ class Jumper:
         # prints out the parachute line by line by assigning a each line to a number in a dicitonary
         # then printing each number out in a while statement loop
         self.parachute = {
-            1: " ______ ",
-            2: "/      \ ",
-            3: "\      / ",
-            4: " \    / ",
-            5: "  (OxO)",
-            6: "  \ | / ",
-            7: "    |",
+            1: " _______ ",
+            2: "/_______\ ",
+            3: " \     / ",
+            4: "  \   / ",
+            5: "    O",
+            6: "   /|\ ",
             8: "   / \ ",
             9: "^^^^^^^^^^"
         }
@@ -36,7 +35,7 @@ class Jumper:
 
     def is_alive(self):
         parachute = self.parachute
-        if parachute[0] == "  (OxO)":
+        if parachute[0] == "    O":
             self.alive = False
         else:
             self.alive = True
