@@ -11,12 +11,17 @@ class Director:
         self.jumper = Jumper()
         self.word_bank = Word_Bank()
 
-
     def start_game(self):
         self.word_bank.load_list("wordlist.txt")
         self.word_bank.choose_word()
         self.jumper.create_parachute()
         self.word_bank.get_blank()
+
+        while self.keep_playing:
+            self.get_inputs()
+            self.do_updates()
+            self.do_outputs()
+            
 
     def get_inputs(self):
         guess = (self.console.read("Guess a letter [a-z]: ")).lower()
