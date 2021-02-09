@@ -4,9 +4,10 @@ class Word_Bank:
     def __init__(self):
         self.word = ""
         self.blank = ""
-        self.guesses = ''
+        self.guesses = ""
         self.word_list = []
         self.length = 0
+        self.win = False
 
     def choose_word(self):
         maximum = len(self.word_list)
@@ -15,7 +16,7 @@ class Word_Bank:
         self.hide_word()
 
     def load_list(self, filename):
-        with open(filename) as reader:
+        with open(filename, "rt") as reader:
             self.word_list = reader.readlines()
 
     def hide_word(self):
@@ -47,9 +48,8 @@ class Word_Bank:
         return self.blank
 
     def check_win(self):
-        alive = True
         if '_' in self.blank:
-            alive = True
+            self.win = False
         else:
-            alive = False
-        return alive
+            self.win = True
+        return self.win
